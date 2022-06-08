@@ -1,0 +1,20 @@
+class Boat {
+    color: string = 'red'; 
+
+    pilot(): void {
+
+        console.log('swish')
+    }
+}
+
+compiles to in JS 
+var Boat = (function() {
+    function Boat() {
+        this.color = 'red'
+    };
+    Boat.prototype.pilot = function(){
+        console.log('swish')
+    };
+
+    return Boat
+}());
