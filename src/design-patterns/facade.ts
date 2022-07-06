@@ -1,4 +1,5 @@
 /**
+ * Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
  * The Subsystem can accept requests either from the facade or client directly.
  * In any case, to the Subsystem, the Facade is yet another client, and it's not
  * a part of the Subsystem.
@@ -18,18 +19,17 @@ class Subsystem1 {
 /**
  * Some facades can work with multiple subsystems at the same time.
  */
- class Subsystem2 {
-    public operation1(): string {
-      return 'Subsystem2: Get ready!\n';
-    }
-  
-    // ...
-  
-    public operationZ(): string {
-      return 'Subsystem2: Fire!';
-    }
+class Subsystem2 {
+  public operation1(): string {
+    return 'Subsystem2: Get ready!\n';
   }
-  
+
+  // ...
+
+  public operationZ(): string {
+    return 'Subsystem2: Fire!';
+  }
+}
 
 /**
  * The Facade class provides a simple interface to the complex logic of one or
@@ -47,9 +47,12 @@ class Facade {
    * Depending on your application's needs, you can provide the Facade with
    * existing subsystem objects or force the Facade to create them on its own.
    */
-  constructor(subsystem1: Subsystem1 | null = null, subsystem2: Subsystem2 | null = null) {
+  constructor(
+    subsystem1: Subsystem1 | null = null,
+    subsystem2: Subsystem2 | null = null
+  ) {
     this.subsystem1 = subsystem1 || new Subsystem1();
-    
+
     this.subsystem2 = subsystem2 || new Subsystem2();
   }
 
@@ -69,7 +72,6 @@ class Facade {
     return result;
   }
 }
-
 
 /**
  * The client code works with complex subsystems through a simple interface

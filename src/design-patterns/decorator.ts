@@ -1,4 +1,5 @@
 /**
+ * Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
  * The base Component interface defines operations that can be altered by
  * decorators.
  */
@@ -144,12 +145,12 @@ class EncryptionDecorator implements DataSource {
   }
 }
 
-const source = new FileDataSource('somefile.csv'); 
+const source = new FileDataSource('somefile.csv');
 
-source.writeData('xxx'); 
+source.writeData('xxx');
 
 const compressedSource = new CompressionDecorator(source);
-compressedSource.writeData('salaries')
+compressedSource.writeData('salaries');
 
-const ecryptedSource = new EncryptionDecorator(compressedSource); 
-ecryptedSource.writeData('salaries')
+const ecryptedSource = new EncryptionDecorator(compressedSource);
+ecryptedSource.writeData('salaries');

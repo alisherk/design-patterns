@@ -19,12 +19,13 @@ langs.push('go')
 const ali = [1, 2, 3]; 
 
 ali[-1] = 1; 
+ali[-2] = 2
 
 console.log(ali)
 
-let mike: any = { y: 1}
+//let mike: any = { y: 1}
 
-mike.x = mike; 
+//mike.x = mike; 
 
 //JSON stringify will wail here as it does not support circula referencae JSON.stringify(mike)
 /* 
@@ -37,4 +38,3 @@ for(let i = 0; i < arr.length; i++) {
   else console.log(arr[i])
 }
  */
-

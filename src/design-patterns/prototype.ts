@@ -1,4 +1,5 @@
 /*
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
 a different way to instatiate classes by cloning vs subclassing
 simplifies creation of class object
 */
@@ -82,7 +83,6 @@ function clientCode1() {
 
 // real example
 abstract class Shape {
-
   abstract clone(): Shape;
 }
 
@@ -91,7 +91,7 @@ class Rectangle extends Shape {
   private height: number;
 
   constructor(source: Rectangle) {
-    super()
+    super();
     this.width = source.width;
     this.height = source.height;
   }
@@ -117,19 +117,16 @@ class Circle extends Shape {
 function clientCode2() {
   const circle = new Circle(10);
 
-  const clonedCircle = circle.clone(); 
+  const clonedCircle = circle.clone();
 
-
-
-  if(circle === clonedCircle) {
-      console.log('true')
+  if (circle === clonedCircle) {
+    console.log('true');
   } else {
-      console.log('false')
+    console.log('false');
   }
-  if(circle.radius === clonedCircle.radius) {
-      console.log('objects are happily cloned')
+  if (circle.radius === clonedCircle.radius) {
+    console.log('objects are happily cloned');
   }
-
 }
 
-clientCode2()
+clientCode2();
